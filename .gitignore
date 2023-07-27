@@ -4,6 +4,7 @@
 *.pyc
 __pycache__
 db.sqlite3
+project/local_settings.py
 
 # Backup files #
 *.bak
@@ -84,7 +85,6 @@ coverage.xml
 .hypothesis/
 static/
 media/
-
 # Jupyter Notebook
 .ipynb_checkpoints
 

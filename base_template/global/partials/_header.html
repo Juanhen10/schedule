@@ -27,7 +27,9 @@
             <input type="text" 
             class="search-input"
              placeholder="Search" 
-             id="search" name="q"
+             id="search" 
+             name="q"
+             value="{{ request.GET.q.strip }}"
              > 
         </form>
     </div>

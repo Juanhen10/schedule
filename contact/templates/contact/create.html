@@ -12,15 +12,16 @@
     >
 
     {% csrf_token %}
-    {% for field in form %}
-       <div class="form-content">
-        <div class="form-group">
-          <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-          {{ field }}
+    <div class="form-content">
 
-          {{ field.errors }}
-    {% endfor %}
-        </div>
+     {% for field in form %}
+          <div class="form-group">
+            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+            {{ field }}
+            {{ field.errors }}
+          </div>
+        {% endfor %}
+      </div>
     
 
       <div class="form-content">

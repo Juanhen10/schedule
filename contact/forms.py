@@ -5,11 +5,19 @@ from contact.models import Contact
 
 
 class ContactFrom(forms.ModelForm):
+    picture = forms.ImageField(
+        widget=forms.FileInput(
+            attrs={
+                'accept': 'image/*',
+            }
+        )
+    )
+
     first_name = forms.CharField(
         widget=forms.TextInput(
             attrs={
                 'class': 'classe a classe b',
-                'placeholder': 'escreva aqui'
+                'placeholder': 'escreva aqui',
             }
 
         ),
@@ -17,19 +25,12 @@ class ContactFrom(forms.ModelForm):
         help_text='Texto de ajuda',
     )
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
-        # self.fields['first_name'].widget.attrs.update({
-        #     'class': 'classes-a classe-b',
-        #     'placeholder': 'Escreva aqui',
-        # })
-
     class Meta:
         model = Contact
         fields = (
             'first_name', 'last_name', 'phone',
             'email', 'description', 'category',
+            'picture'
             )
         # widgets = {
         #     'first_name': forms.TextInput(

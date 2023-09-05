@@ -44,7 +44,7 @@ def update(request, contact_id):
     contact = get_object_or_404(Contact, pk=contact_id, show=True )
     form_action = reverse('contact:update', args=(contact_id,))
     if request.method == 'POST':
-        form = ContactFrom(request.POST, isinstance = contact)
+        form = ContactFrom(request.POST, instance=contact)
         context = {
             'form': form,
             'from_action': form_action,
